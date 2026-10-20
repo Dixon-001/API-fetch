@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: flex; gap: 10px;">
+        <div>
+            <label for="dog">Dog's Category</label>
+            <select name="dog" id="dog-category" style="width: 250px; height: 30px;padding: 5px;">
+                <option value="Akita">Akita</option>
+                <option value="Dingo">Dingo</option>
+                <option value="Eskimo">Eskimo</option>
+                <option value="Pug">Pug</option>
+                <option value="Boxer">Boxer</option>
+            </select>
+        </div>
+    <button style="height: 120px;height: 30px;background-color: blue; color:white; border-radius: 10px; font-size: 10px;cursor:pointer;" id="btn">Get Dog </button>
+    <div id="dog_image"></div>
+   <script>
+        let dog_image = document.getElementById("dog_image")
+        let dog_value = document.getElementById("dog-category")
+        let btn = document.getElementById("btn")
+
+
+
+        btn.addEventListener("click", getDogs)
+
+        async function getDogs() {
+            dog_image.innerHTML=" ";
+            try {
+                await fetch(`https://dog.ceo/api/breed/${dog_value.value}/images/random`)
+                    .then((response) => response.json())
+                    .then((data) => {
+                        let img = document.createElement("img")
+                        img.src = data.message
+
+                        dog_image.appendChild(img)
+                    })
+            } catch (error) {
+                console.error(error.message)
+            }
+
+        }
+
+        try {
+            
+        } catch (error) {
+            
+        }
+    </script>
+</body>
+</html>

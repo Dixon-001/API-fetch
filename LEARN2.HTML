@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div id="card" style="width: 500px;height: 200px; background-color: #f0f0f0; display: flex; align-items: center; justify-content: center; border-radius: 10px; font-size: 20px; margin-bottom: 20px; text-align: center;">
+            <!-- Affirmation will be displayed here -->
+        
+            
+        </div> 
+        <button id="btn" style="height:20px;background-color: rgb(24, 24, 41); color:white; border-radius: 10px; font-size: 10px;cursor:pointer;">
+            Get Affirmation
+        </button>
+    </div>
+    <script>
+
+        let btn = document.getElementById("btn");
+        let card = document.getElementById("card");
+
+        btn.addEventListener("click", getData)
+        async function getData (){
+            card.innerHTML = " "
+            try{
+              await fetch (" https://yes.lavx.hu/yes") .then((response) => {
+                return response.json()
+               }) .then((result) => {
+                console.log(result)
+               card.innerHTML=result.reason
+               })
+            }
+            catch (error) {
+                console.error(error.message)
+            }
+        }
+        getData ();
+    </script>
+</body>
+</html>

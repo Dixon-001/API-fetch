@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         // starships 
+          async function fetchstarship() {
+            try {
+                const response = await fetch('https://pokeapi.co/api/v2/pokemon/2');
+                const data = await response.json();
+                console.log(data);
+                const starshipDiv = document.getElementById('starship');
+                starshipDiv.innerHTML = '';
+                data.results.forEach(starship => {
+                    // console.log(starship);
+                    const starshipCard = document.createElement('div');
+                    starshipCard.style.fontFamily = 'poppins, sans-serif';
+                    
+                    starshipCard.style.border= '1px solid #ccc';
+                    // personCard.style.width = '300px';
+                     starshipCard.style.padding = '16px';
+                     starshipCard.style.borderRadius = '16px'
+                    starshipCard.innerHTML = `
+                        <h3 class="text-xl font-bold mb-2">${starship.name}</h3>
+                        <p><strong>Model:</strong> ${starship.model}</p>
+                        <p><strong>Manufacturer:</strong> ${starship.manufacturer}</p>
+                        <p><strong>Cost in Credit:</strong> ${starship.cost_in_credits}</p>
+                        <p><strong>vehicle length:</strong> ${starship.length}</p>
+                        <p><strong>Max atm speed:</strong> ${starship.max_atmosphering_speed}</p>
+                        <p><strong>starship crew:</strong> ${starship.crew}</p>
+                        <p><strong>Passengers:</strong> ${starship.passengers}</p>
+                         <p><strong>Cargo capacity:</strong> ${starship.cargo_capacity}</p>
+                        <p><strong>Consumables:</strong> ${starship.consumables}</p>
+                         <p><strong>Hydrating Rating:</strong> ${starship.hyperdrive_rating}</p>
+                        <p><strong>MGLT:</strong> ${starship.MGLT}</p>
+                        <p><strong>Starship class:</strong> ${starship.starship_class}</p>
+                       
+                    `;
+                    starshipDiv.appendChild(starshipCard);
+                });
+            } catch (error) {
+                console.error('Error fetching people:', error);
+            }
+        }
+        fetchstarship()
+    </script>
+</body>
+</html>
