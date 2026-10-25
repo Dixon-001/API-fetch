@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop By Category</title>
+</head>
+<body>
+    <div style="display: flex; gap: 10px; align-items: center;">
+        <div>
+            <label for="categories">Shop By Category</label>
+            <select name="categories" id="categories" style="width: 250px; height: 30px; padding: 5px;">
+                <option value="fragrance">Fragrance</option>
+                <option value="beauty">Beauty</option>
+                <option value="furniture">Furniture</option>
+                <option value="groceries">Groceries</option>
+                <option value="home-decoration">Home Decoration</option>
+                <option value="mens-shirts">Men's Shirts</option>
+                <option value="laptops">Laptops</option>
+                <option value="mens-shoes">Men's Shoes</option>
+                <option value="mens-watches">Men's Watches</option>
+                <option value="mobile-accessories">Mobile Accessories</option>
+                <option value="skin-care">Skin Care</option>
+                <option value="motorcycle">Motorcycles</option>
+                <option value="smartphones">Smartphones</option>
+                <option value="sports-accessories">Sports Accessories</option>
+                <option value="sunglasses">Sunglasses</option>
+            </select>
+        </div>
+       
+    </div>
+
+    <div id="cat" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px;"></div>
+
+    <script>
+        const container = document.getElementById("cat");
+        const catSelect = document.getElementById("categories");
+        const btn = document.getElementById("btn");
+        
+        async function getCategory(category) {
+            try {
+             await   fetch(`https://dummyjson.com/products/${category}/smartphone`)
+                .then(res => res.json())
+                .then(data =>{
+                    const category = document.getElementById("category")
+                    let img = category.querySelectorAll("img")
+                    let title = category.querySelectorAll("h3")
+                    let price = category.querySelectorAll("p")
+                     
+                     data.products.forEach((p,i) =>{
+                        img[i].src = p.thumbnail
+                        title[i].innerText = p.title
+                        price[i].innerText =`$${p.rice}`
+
+                     })
+                });
+            } catch (error) {
+                
+            }
+            
+        }
+
+        catSelect.addEventListener("change",()=>{
+            getCategory(catSelect.value)
+        });
+
+        // async function getCat() {
+        //     container.innerHTML = "";
+        //     const category = catSelect.value;
+
+        //     try {
+        //         const res = await fetch(`https://dummyjson.com/products/${category}`);
+        //         const data = await res.json();
+
+        //         // data.products is an array of product objects
+        //         data.products.forEach(product => {
+        //             const img = document.createElement("img");
+        //             img.src = product.thumbnail;   // each product has a "thumbnail" URL
+        //             img.alt = product.title;
+        //             img.style.width = "150px";
+        //             container.appendChild(img);
+        //         });
+        //     } catch (error) {
+        //         console.error(error.message);
+        //     }
+        // }
+    </script>
+</body>
+</html>   

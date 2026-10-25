@@ -1,207 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>e-buy |Register</title>
-    <link rel="stylesheet" href="/output.css">
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&displa
-</head>
-<body class="bg-gray-100 min-h-screen border-[20px] border-transparent rounded-[20px] bg-gradient-to-r from-[#E8E8E8] to-[#D7BDB0]">
-    <div class=" rounded-lg shadow-xl p-6 w-full max-w-3xl items-center justify-center mx-auto bg-gray-50 md:mt-14 ">
-        <div class="mb-8 text-center">
-            <h1 class="text-2xl font-bold text-gray-800">Create an Account</h1>
-            <p class="text-gray-600 mt-2">Fill in your details to get started</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create account | e-buy</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#4f46e5", secondary: "#f97316", accent: "#ffa22f" },
+            fontFamily: { sans: ["Inter", "system-ui", "sans-serif"], brand: ["Pacifico", "cursive"] },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+    <style>
+      body { font-family: "Inter", system-ui, sans-serif; }
+      .field { display: block; width: 100%; border: 1px solid #d1d5db; border-radius: 0.5rem; background: #fff; padding: 0.6rem 0.9rem; font-size: 0.875rem; }
+      .field.with-icon { padding-left: 2.6rem; }
+      .field::placeholder { color: #9ca3af; }
+      .field:focus { outline: none; border-color: #4f46e5; box-shadow: 0 0 0 4px rgba(79,70,229,.15); }
+      .field.invalid { border-color: #f43f5e; }
+      .lbl { display: block; margin-bottom: .25rem; font-size: .8125rem; font-weight: 500; color: #374151; }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900 antialiased">
+    <main class="grid min-h-screen lg:h-screen lg:grid-cols-[5fr_7fr]">
+      <section class="relative flex h-40 flex-col justify-between overflow-hidden bg-indigo-900 sm:h-48 lg:h-auto">
+        <img src="images/men's collection.webp" alt="" class="absolute inset-0 h-full w-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#1e1b4b]/95 via-[#312e81]/60 to-primary/25"></div>
+        <div class="relative z-10 flex items-center justify-between px-6 pt-5 lg:px-12 lg:pt-8">
+          <a href="index.html" class="font-brand text-2xl text-white">DNG</a>
+          <a href="index.html" class="text-sm text-white/80 transition-colors hover:text-white">&larr; Back to store</a>
         </div>
-
-        <form>
-            <div class="space-y-4">
-                <!-- Full Name -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
-                        <input id="firstName" name="firstName" type="text" required 
-                            class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" 
-                            placeholder="John">
-                    </div>
-                    <div>
-                        <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
-                        <input id="lastName" name="lastName" type="text" required 
-                            class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" 
-                            placeholder="Doe">
-                    </div>
-                </div>
-
-                <!-- Email -->
-                <div>
-                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                    <div class="relative">
-                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                            </svg>
-                        </div>
-                        <input id="email" name="email" type="email" autocomplete="email" required 
-                            class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" 
-                            placeholder="johndoe@example.com">
-                    </div>
-                </div>
-
-                <!-- Password -->
-                <div>
-                    <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
-                    <div class="relative">
-                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
-                            </svg>
-                        </div>
-                        <input id="password" name="password" type="password" required 
-                            class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" 
-                            placeholder="••••••••">
-                    </div>
-                    <p class="mt-1 text-xs text-gray-500">Must be at least 8 characters with 1 uppercase, 1 number, and 1 special character</p>
-                </div>
-
-                <!-- Confirm Password -->
-                <div>
-                    <label for="confirmPassword" class="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
-                    <div class="relative">
-                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
-                            </svg>
-                        </div>
-                        <input id="confirmPassword" name="confirmPassword" type="password" required 
-                            class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" 
-                            placeholder="••••••••">
-                    </div>
-                </div>
-
-                <!-- Phone Number -->
-                <div>
-                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                    <div class="relative">
-                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                            </svg>
-                        </div>
-                        <input id="phone" name="phone" type="tel" 
-                            class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" 
-                            placeholder="(+234) 456-7890">
-                    </div>
-                    <p class="mt-1 text-xs text-gray-500">Optional</p>
-                </div>
-
-                <!-- Date of Birth -->
-                <div>
-                    <label for="dob" class="block text-sm font-medium text-gray-700 mb-1">Date of Birth</label>
-                    <input id="dob" name="dob" type="date" 
-                        class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
-                </div>
-
-                <!-- Gender -->
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Gender</label>
-                    <div class="flex space-x-4">
-                        <div class="flex items-center">
-                            <input id="male" name="gender" type="radio" value="male" 
-                                class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300">
-                            <label for="male" class="ml-2 block text-sm text-gray-700">Male</label>
-                        </div>
-                        <div class="flex items-center">
-                            <input id="female" name="gender" type="radio" value="female" 
-                                class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300">
-                            <label for="female" class="ml-2 block text-sm text-gray-700">Female</label>
-                        </div>
-                        <!-- <div class="flex items-center">
-                            <input id="other" name="gender" type="radio" value="other" 
-                                class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300">
-                            <label for="other" class="ml-2 block text-sm text-gray-700">Other</label>
-                        </div> -->
-                    </div>
-                </div>
-
-                <!-- Terms and Conditions -->
-                <div class="flex items-start">
-                    <div class="flex items-center h-5">
-                        <input id="terms" name="terms" type="checkbox" required
-                            class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
-                    </div>
-                    <div class="ml-3 text-sm">
-                        <label for="terms" class="font-medium text-gray-700">I agree to the 
-                            <a href="#" class="text-indigo-600 hover:text-indigo-500">Terms of Service</a> and 
-                            <a href="#" class="text-indigo-600 hover:text-indigo-500">Privacy Policy</a>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Newsletter Subscription -->
-                <div class="flex items-start">
-                    <div class="flex items-center h-5">
-                        <input id="newsletter" name="newsletter" type="checkbox"
-                            class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
-                    </div>
-                    <div class="ml-3 text-sm">
-                        <label for="newsletter" class="font-medium text-gray-700">Subscribe to our newsletter</label>
-                        <p class="text-gray-500">Get updates on new features and promotions</p>
-                    </div>
-                </div>
-
-                <!-- Submit Button -->
-                <div>
-                    <button type="submit" 
-                        class="md:w-md w-fit flex justify-center mx-auto  py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-900 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                        Create Account
-                    </button>
-                </div>
-            </div>
-        </form>
-
-        <!-- Sign In Link -->
-        <div class="mt-6 text-center">
-            <p class="text-sm text-gray-600">
-                Already have an account? 
-                <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">Sign in</a>
-            </p>
+        <div class="relative z-10 px-6 pb-5 lg:max-w-xl lg:px-12 lg:pb-10">
+          <span class="mb-2 inline-block rounded-full bg-accent px-3 py-1 text-xs font-semibold uppercase tracking-wider text-gray-900 lg:mb-4">Join DNG</span>
+          <h2 class="text-xl font-bold leading-tight text-white sm:text-2xl lg:text-4xl xl:text-5xl">Your wardrobe, <span class="text-accent">upgraded</span>.</h2>
+          <p class="mt-4 hidden text-lg text-indigo-100 lg:block">Create a free account to unlock member pricing, faster checkout and personalised style picks.</p><div class="mt-6 hidden grid-cols-3 gap-4 border-t border-white/20 pt-5 text-white lg:grid [@media(max-height:760px)]:lg:hidden"><div><p class="text-2xl font-bold">15k+</p><p class="text-xs text-indigo-200">Happy shoppers</p></div><div><p class="text-2xl font-bold">1,200+</p><p class="text-xs text-indigo-200">Products</p></div><div><p class="text-2xl font-bold">4.8/5</p><p class="text-xs text-indigo-200">Average rating</p></div></div>
         </div>
+      </section>
 
-        <!-- Social Registration -->
-        <div class="mt-6">
-            <div class="relative">
-                <div class="absolute inset-0 flex items-center">
-                    <div class="w-full border-t border-gray-300"></div>
-                </div>
-                <div class="relative flex justify-center text-sm">
-                    <span class="px-2 bg-white text-gray-500">Or register with</span>
-                </div>
+      <section class="flex items-center justify-center bg-gray-50 px-4 py-6 sm:px-8 lg:overflow-y-auto lg:bg-white lg:py-4">
+        <div class="w-full max-w-xl rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-100 sm:p-8 lg:p-0 lg:shadow-none lg:ring-0">
+          <h1 class="text-2xl font-bold tracking-tight sm:text-3xl">Create your account</h1>
+          <p class="mt-1 text-sm text-gray-600">Fill in your details to get started. It only takes a minute.</p>
+
+          <form id="regForm" class="mt-5 space-y-3" novalidate>
+            <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <div><label for="firstName" class="lbl">First name</label><input id="firstName" name="firstName" type="text" required autocomplete="given-name" placeholder="John" class="field" /></div>
+              <div><label for="lastName" class="lbl">Last name</label><input id="lastName" name="lastName" type="text" required autocomplete="family-name" placeholder="Doe" class="field" /></div>
             </div>
-            <div class="mt-6 grid grid-cols-3 gap-3">
-                <button type="button" 
-                    class="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
-                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"></path>
-                    </svg>
-                </button>
-                <button type="button" 
-                    class="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
-                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-                    </svg>
-                </button>
-                <button type="button" 
-                    class="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
-                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.603.07-.603a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.269-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z" clip-rule="evenodd"/>
-                    </svg>
-                </button>
+            <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <div>
+                <label for="email" class="lbl">Email address</label>
+                <div class="relative"><span class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400"><svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg></span><input id="email" name="email" type="email" required autocomplete="email" placeholder="johndoe@example.com" class="field with-icon" /></div>
+              </div>
+              <div>
+                <label for="phone" class="lbl">Phone <span class="font-normal text-gray-400">(optional)</span></label>
+                <div class="relative"><span class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400"><svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg></span><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(+234) 456-7890" class="field with-icon" /></div>
+              </div>
             </div>
+            <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <div>
+                <label for="password" class="lbl">Password</label>
+                <div class="relative">
+                  <span class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400"><svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg></span>
+                  <input id="password" name="password" type="password" required autocomplete="new-password" placeholder="Create a password" class="field with-icon pr-14" />
+                  <button type="button" data-toggle="password" class="absolute inset-y-0 right-0 flex items-center px-3 text-xs font-semibold text-gray-500 hover:text-primary">Show</button>
+                </div>
+              </div>
+              <div>
+                <label for="confirmPassword" class="lbl">Confirm password</label>
+                <div class="relative">
+                  <span class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400"><svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg></span>
+                  <input id="confirmPassword" name="confirmPassword" type="password" required autocomplete="new-password" placeholder="Repeat password" class="field with-icon pr-14" />
+                  <button type="button" data-toggle="confirmPassword" class="absolute inset-y-0 right-0 flex items-center px-3 text-xs font-semibold text-gray-500 hover:text-primary">Show</button>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="flex gap-1.5" aria-hidden="true">
+                <span class="h-1 flex-1 rounded-full bg-gray-200 transition-colors" data-bar></span><span class="h-1 flex-1 rounded-full bg-gray-200 transition-colors" data-bar></span><span class="h-1 flex-1 rounded-full bg-gray-200 transition-colors" data-bar></span><span class="h-1 flex-1 rounded-full bg-gray-200 transition-colors" data-bar></span>
+              </div>
+              <p class="mt-1 text-xs text-gray-500">8+ characters with 1 uppercase letter, 1 number and 1 special character.</p>
+            </div>
+            <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <div><label for="dob" class="lbl">Date of birth</label><input id="dob" name="dob" type="date" class="field" /></div>
+              <fieldset><legend class="lbl">Gender</legend><div class="grid grid-cols-2 gap-2"><label class="cursor-pointer"><input type="radio" name="gender" value="male" class="peer sr-only" /><span class="flex items-center justify-center rounded-lg border border-gray-300 bg-white py-2 text-sm font-medium text-gray-700 transition peer-checked:border-primary peer-checked:bg-indigo-50 peer-checked:text-primary peer-focus-visible:ring-4 peer-focus-visible:ring-primary/20">Male</span></label><label class="cursor-pointer"><input type="radio" name="gender" value="female" class="peer sr-only" /><span class="flex items-center justify-center rounded-lg border border-gray-300 bg-white py-2 text-sm font-medium text-gray-700 transition peer-checked:border-primary peer-checked:bg-indigo-50 peer-checked:text-primary peer-focus-visible:ring-4 peer-focus-visible:ring-primary/20">Female</span></label></div></fieldset>
+            </div>
+            <div class="space-y-2 pt-1 text-sm text-gray-700">
+              <label class="flex items-start gap-3"><input id="terms" name="terms" type="checkbox" required class="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-primary focus:ring-primary" /><span>I agree to the <a href="#" class="font-medium text-primary hover:text-indigo-700">Terms of Service</a> and <a href="#" class="font-medium text-primary hover:text-indigo-700">Privacy Policy</a></span></label>
+              <label class="flex items-start gap-3"><input id="newsletter" name="newsletter" type="checkbox" class="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-primary focus:ring-primary" /><span>Subscribe to our newsletter for new arrivals and promotions</span></label>
+            </div>
+            <p id="formError" class="hidden rounded-lg bg-rose-50 px-3 py-2 text-sm text-rose-700" role="alert"></p>
+            <button type="submit" class="w-full rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-primary/30">Create account</button>
+          </form>
+
+          <div class="mt-4 flex items-center gap-3">
+            <span class="whitespace-nowrap text-xs uppercase tracking-wider text-gray-500">Or register with</span>
+            <div class="grid flex-1 grid-cols-3 gap-2"><button type="button" aria-label="Register with X" class="flex items-center justify-center rounded-lg border border-gray-300 bg-white py-2 transition hover:bg-gray-50"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="#111827"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></button><button type="button" aria-label="Register with Google" class="flex items-center justify-center rounded-lg border border-gray-300 bg-white py-2 transition hover:bg-gray-50"><svg class="h-5 w-5" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></button><button type="button" aria-label="Register with Facebook" class="flex items-center justify-center rounded-lg border border-gray-300 bg-white py-2 transition hover:bg-gray-50"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg></button></div>
+          </div>
+          <p class="mt-4 text-center text-sm text-gray-600">Already have an account? <a href="login.html" class="font-semibold text-primary hover:text-indigo-700">Sign in</a></p>
         </div>
-    </div>
-</body>
+      </section>
+    </main>
+    <script>
+      (function () {
+        var $ = function (id) { return document.getElementById(id); };
+        var pw = $("password"), cpw = $("confirmPassword"), form = $("regForm"), err = $("formError");
+        var bars = document.querySelectorAll("[data-bar]");
+        var RULE = /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/;
+        var colors = ["bg-rose-500", "bg-orange-500", "bg-amber-400", "bg-emerald-500"];
+        document.querySelectorAll("[data-toggle]").forEach(function (b) {
+          b.addEventListener("click", function () {
+            var inp = document.getElementById(b.getAttribute("data-toggle"));
+            var show = inp.type === "password";
+            inp.type = show ? "text" : "password";
+            b.textContent = show ? "Hide" : "Show";
+          });
+        });
+
+        pw.addEventListener("input", function () {
+          var v = pw.value, score = 0;
+          if (v.length >= 8) score++;
+          if (/[A-Z]/.test(v)) score++;
+          if (/\d/.test(v)) score++;
+          if (/[^A-Za-z0-9]/.test(v)) score++;
+          bars.forEach(function (bar, i) {
+            bar.className = "h-1 flex-1 rounded-full transition-colors " + (i < score ? colors[score - 1] : "bg-gray-200");
+          });
+        });
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          form.querySelectorAll(".field").forEach(function (f) { f.classList.remove("invalid"); });
+          var bad = [];
+          ["firstName", "lastName", "email"].forEach(function (id) {
+            if (!$(id).value.trim() || !$(id).checkValidity()) { $(id).classList.add("invalid"); bad.push(id); }
+          });
+          if (!RULE.test(pw.value)) { pw.classList.add("invalid"); bad.push("pw"); }
+          if (!cpw.value || pw.value !== cpw.value) { cpw.classList.add("invalid"); bad.push("cpw"); }
+          var msg = "";
+          if (bad.indexOf("pw") > -1) msg = "Password must be 8+ characters with 1 uppercase letter, 1 number and 1 special character.";
+          else if (bad.indexOf("cpw") > -1) msg = "The two passwords do not match.";
+          else if (bad.length) msg = "Please enter your name and a valid email address.";
+          else if (!$("terms").checked) msg = "Please accept the Terms of Service and Privacy Policy to continue.";
+          if (msg) { err.textContent = msg; err.classList.remove("hidden"); return; }
+          err.classList.add("hidden");
+          window.location.href = "login.html";
+        });
+      })();
+    </script>
+  </body>
 </html>
